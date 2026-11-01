@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosilbek Soyibov | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-controls">
+    <div class="lang-switch">
+      <button id="lang-uz" class="lang-btn active">UZ</button>
+      <button id="lang-ru" class="lang-btn">RU</button>
+    </div>
+    <label class="switch" title="Mavzuni o'zgartirish">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <header>
+    <h1>Hosilbek Soyibov</h1>
+    <p data-i18n="hero_subtitle">Kompyuter injiniringi talabasi va veb-dasturchi</p>
+  </header>
+
+  <section id="about">
+    <h2 data-i18n="about_title">Men haqimda</h2>
+    <p data-i18n="about_text">Men Soyibov Hosilbek, "Cyber University" kompyuter injiniringi yo'nalishi 1-kurs talabasiman. Veb-saytlar va Telegram botlar yarataman. Hozir HTML, CSS va C++ ni o'rganyapman, yangi texnologiyalarni tez o'zlashtiraman.</p>
+  </section>
+
+  <section id="skills">
+    <h2 data-i18n="skills_title">Ko'nikmalar</h2>
+    <div class="cards">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">C++</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 data-i18n="services_title">Xizmatlar</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-i18n="service1_title">Vizitka sayt</h3>
+        <p data-i18n="service1_desc">Do'kon, kafe yoki xizmat uchun: manzil, ish vaqti, narxlar va bog'lanish tugmalari.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="service2_title">Telegram bot</h3>
+        <p data-i18n="service2_desc">Buyurtma qabul qiluvchi yoki guruhni spamdan himoya qiluvchi bot yaratish.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="service3_title">Landing page</h3>
+        <p data-i18n="service3_desc">Bitta sahifali, telefonga moslashgan sayt: mahsulot yoki xizmatni tanishtirish uchun.</p>
+      </div>
+    </div>
+    <p class="note" data-i18n="services_note">Narx loyiha murakkabligiga qarab kelishiladi. Batafsil uchun "Bog'lanish" bo'limiga yozing.</p>
+  </section>
+
+  <section id="projects">
+    <h2 data-i18n="projects_title">Loyihalar</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-i18n="project1_title">Portfolio sayt</h3>
+        <p data-i18n="project1_desc">Shaxsiy sayt, HTML va CSS da yozilgan.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="project2_title">Gul Olami sayti</h3>
+        <p data-i18n="project2_desc">Gul do'koni uchun zamonaviy va qulay veb-sayt. Telegram orqali savat va buyurtma berish tizimi mavjud.</p>
+        <a href="gul-olami/index.html" target="_blank" data-i18n="project2_link">Saytni ochish</a>
+      </div>
+      <div class="card">
+        <h3 data-i18n="project3_title">Telegram bot</h3>
+        <p data-i18n="project3_desc">Telegram guruhda spam xabarlarni aniqlab, guruhni himoya qiladi.</p>
+        <a href="https://t.me/CSUspam_qoravul_bot" target="_blank" data-i18n="bot_link">Botni ochish</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-i18n="contact_title">Bog'lanish</h2>
+    <a href="https://t.me/s_hosilbek" target="_blank">Telegram</a>
+    <a href="tel:+998200160054" data-i18n="phone_text">Telefon nomerim (+998 20 016 00 54)</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
