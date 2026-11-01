@@ -3,85 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hosilbek Soyibov | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Gul Olami | Toshkentda gul yetkazib berish</title>
+  <meta name="description" content="Toshkentda gul va buketlar yetkazib berish. Atirgul, lola, aralash buketlar. Telegram orqali buyurtma bering.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Gul Olami | Gullar yetkazib berish">
+  <meta property="og:description" content="Yangi gullar va buketlar, shahar bo'ylab yetkazib berish.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gul-style.css">
 </head>
 <body>
-  <div class="top-controls">
-    <div class="lang-switch">
-      <button id="lang-uz" class="lang-btn active">UZ</button>
-      <button id="lang-ru" class="lang-btn">RU</button>
-    </div>
-    <label class="switch" title="Mavzuni o'zgartirish">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-  </div>
 
-  <header>
-    <h1>Hosilbek Soyibov</h1>
-    <p data-i18n="hero_subtitle">Kompyuter injiniringi talabasi va veb-dasturchi</p>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="logo" id="logo"></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" data-go="home" data-i18n="nav_home">Bosh sahifa</a>
+        <a href="#catalog" data-go="catalog" data-i18n="nav_catalog">Buketlar</a>
+        <a href="#features" data-go="features" data-i18n="nav_features">Afzalliklar</a>
+        <a href="#reviews" data-go="reviews" data-i18n="nav_reviews">Sharhlar</a>
+        <a href="#faq" data-go="faq" data-i18n="nav_faq">Savol-javob</a>
+        <a href="#contact" data-go="contact" data-i18n="nav_contact">Aloqa</a>
+      </div>
+      <label class="lang-switch" aria-label="Til / Язык">
+        <input type="checkbox" id="lang-toggle">
+        <span class="lang-slider"><b>UZ</b><b>RU</b></span>
+      </label>
+      <button class="cart-btn" id="cart-open" aria-label="Savat">🛒 <span id="cart-count">0</span></button>
+      <button class="burger" id="burger" aria-label="Menyu">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero page" data-page="home">
+    <div class="hero-content">
+      <span class="tag" id="hero-tag"></span>
+      <h1 id="hero-title"></h1>
+      <p id="hero-text"></p>
+      <div class="hero-btns">
+        <a href="#catalog" class="btn" data-i18n="hero_catalog">Buketlarni ko'rish</a>
+        <a id="hero-tg" class="btn btn-ghost" href="#" target="_blank" rel="noopener" data-i18n="hero_tg">Telegramda yozish</a>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
   </header>
 
-  <section id="about">
-    <h2 data-i18n="about_title">Men haqimda</h2>
-    <p data-i18n="about_text">Men Soyibov Hosilbek, "Cyber University" kompyuter injiniringi yo'nalishi 1-kurs talabasiman. Veb-saytlar va Telegram botlar yarataman. Hozir HTML, CSS va C++ ni o'rganyapman, yangi texnologiyalarni tez o'zlashtiraman.</p>
+  <section class="section page" id="catalog" data-page="catalog">
+    <h2 class="title reveal" data-i18n="catalog_title">Bizning buketlar</h2>
+    <p class="subtitle reveal" data-i18n="catalog_sub">Tanlang, savatga qo'shing va buyurtmani Telegram orqali yuboring</p>
+        <p class="edit-note" id="edit-note" hidden></p>
+    <div class="filters" id="filters"></div>
+    <div class="products" id="products"></div>
   </section>
 
-  <section id="skills">
-    <h2 data-i18n="skills_title">Ko'nikmalar</h2>
-    <div class="cards">
-      <div class="card">HTML</div>
-      <div class="card">CSS</div>
-      <div class="card">C++</div>
+  <section class="section alt page" id="features" data-page="features">
+    <h2 class="title reveal" data-i18n="features_title">Nega aynan biz</h2>
+    <div class="features">
+      <div class="feature reveal"><span>🚚</span><h3 data-i18n="f1_t">Tez yetkazish</h3><p data-i18n="f1_p">Buyurtmani shu kunning o'zida, ko'pincha 1-2 soatda yetkazamiz.</p></div>
+      <div class="feature reveal"><span>🌷</span><h3 data-i18n="f2_t">Yangi gullar</h3><p data-i18n="f2_p">Gullar har kuni yangilanadi, eskisi sotilmaydi.</p></div>
+      <div class="feature reveal"><span>🎁</span><h3 data-i18n="f3_t">Chiroyli qadoq</h3><p data-i18n="f3_p">Har bir buket sovg'a qadog'ida, bepul.</p></div>
+      <div class="feature reveal"><span>💬</span><h3 data-i18n="f4_t">Qulay buyurtma</h3><p data-i18n="f4_p">Telegram orqali yozing, tez javob beramiz.</p></div>
     </div>
   </section>
 
-  <section id="services">
-    <h2 data-i18n="services_title">Xizmatlar</h2>
-    <div class="cards">
-      <div class="card">
-        <h3 data-i18n="service1_title">Vizitka sayt</h3>
-        <p data-i18n="service1_desc">Do'kon, kafe yoki xizmat uchun: manzil, ish vaqti, narxlar va bog'lanish tugmalari.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="service2_title">Telegram bot</h3>
-        <p data-i18n="service2_desc">Buyurtma qabul qiluvchi yoki guruhni spamdan himoya qiluvchi bot yaratish.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="service3_title">Landing page</h3>
-        <p data-i18n="service3_desc">Bitta sahifali, telefonga moslashgan sayt: mahsulot yoki xizmatni tanishtirish uchun.</p>
-      </div>
-    </div>
-    <p class="note" data-i18n="services_note">Narx loyiha murakkabligiga qarab kelishiladi. Batafsil uchun "Bog'lanish" bo'limiga yozing.</p>
-  </section>
-
-  <section id="projects">
-    <h2 data-i18n="projects_title">Loyihalar</h2>
-    <div class="cards">
-      <div class="card">
-        <h3 data-i18n="project1_title">Portfolio sayt</h3>
-        <p data-i18n="project1_desc">Shaxsiy sayt, HTML va CSS da yozilgan.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="project2_title">Gul Olami sayti</h3>
-        <p data-i18n="project2_desc">Gul do'koni uchun zamonaviy va qulay veb-sayt. Telegram orqali savat va buyurtma berish tizimi mavjud.</p>
-        <a href="gul-olami/index.html" target="_blank" data-i18n="project2_link">Saytni ochish</a>
-      </div>
-      <div class="card">
-        <h3 data-i18n="project3_title">Telegram bot</h3>
-        <p data-i18n="project3_desc">Telegram guruhda spam xabarlarni aniqlab, guruhni himoya qiladi.</p>
-        <a href="https://t.me/CSUspam_qoravul_bot" target="_blank" data-i18n="bot_link">Botni ochish</a>
-      </div>
+  <section class="section page" id="steps" data-page="features">
+    <h2 class="title reveal" data-i18n="steps_title">Qanday buyurtma beriladi</h2>
+    <div class="steps">
+      <div class="step reveal"><b>1</b><h3 data-i18n="s1_t">Buket tanlang</h3><p data-i18n="s1_p">Katalogdan o'zingizga yoqqanini savatga qo'shing.</p></div>
+      <div class="step reveal"><b>2</b><h3 data-i18n="s2_t">Ma'lumot yozing</h3><p data-i18n="s2_p">Ism, telefon va manzilni kiriting.</p></div>
+      <div class="step reveal"><b>3</b><h3 data-i18n="s3_t">Biz yetkazamiz</h3><p data-i18n="s3_p">Buyurtma Telegram'ga tushadi, biz tasdiqlab yetkazamiz.</p></div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 data-i18n="contact_title">Bog'lanish</h2>
-    <a href="https://t.me/s_hosilbek" target="_blank">Telegram</a>
-    <a href="tel:+998200160054" data-i18n="phone_text">Telefon nomerim (+998 20 016 00 54)</a>
+  <section class="section alt page" id="reviews" data-page="reviews">
+    <h2 class="title reveal" data-i18n="reviews_title">Mijozlar fikri</h2>
+    <div class="reviews" id="reviews-box"></div>
+    <div class="review-form reveal">
+      <h3 data-i18n="rf_title">Fikringizni qoldiring</h3>
+      <input id="r-name" placeholder="Ismingiz" data-i18n-ph="rf_name">
+      <select id="r-stars">
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★ (4)</option>
+        <option value="3">★★★ (3)</option>
+        <option value="2">★★ (2)</option>
+        <option value="1">★ (1)</option>
+      </select>
+      <textarea id="r-text" rows="3" placeholder="Fikringiz..." data-i18n-ph="rf_text"></textarea>
+      <button class="btn" id="r-send" data-i18n="rf_send">Fikrni yuborish</button>
+      <small data-i18n="rf_note">Fikringiz do'konga Telegram orqali yuboriladi va ko'rib chiqilgach saytga qo'yiladi.</small>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <section class="section page" id="faq" data-page="faq">
+    <h2 class="title reveal" data-i18n="faq_title">Ko'p so'raladigan savollar</h2>
+    <div class="faq">
+      <details class="reveal"><summary data-i18n="q1">Yetkazib berish qancha turadi?</summary><p data-i18n="a1">Narx manzilga qarab kelishiladi. Buyurtma berganingizda aniq aytamiz.</p></details>
+      <details class="reveal"><summary data-i18n="q2">Buyurtmani oldindan berish mumkinmi?</summary><p data-i18n="a2">Ha, sana va vaqtni izohga yozing, shunga tayyorlaymiz.</p></details>
+      <details class="reveal"><summary data-i18n="q3">Qanday to'lanadi?</summary><p data-i18n="a3">Naqd yoki karta orqali. Batafsil buyurtmani tasdiqlaganda kelishamiz.</p></details>
+      <details class="reveal"><summary data-i18n="q4">Buketni o'zgartirish mumkinmi?</summary><p data-i18n="a4">Albatta. Rang, gul turi yoki o'lchamni izohda yozing.</p></details>
+    </div>
+  </section>
+
+  <section class="section alt contact page" id="contact" data-page="contact">
+    <h2 class="title reveal" data-i18n="contact_title">Bog'lanish</h2>
+    <p id="address"></p>
+    <p id="hours"></p>
+    <div class="contact-btns">
+      <a id="tg-link" class="btn" href="#" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a id="phone-link" class="btn btn-green" href="#"></a>
+      <a id="map-link" class="btn btn-ghost-dark" href="#" target="_blank" rel="noopener" data-i18n="map_btn">📍 Xaritada ochish</a>
+    </div>
+  </section>
+
+  <footer id="footer-text"></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <h3 data-i18n="cart_title">Savat</h3>
+      <button id="cart-close" aria-label="Yopish">✕</button>
+    </div>
+    <div class="drawer-items" id="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="total"><span data-i18n="total">Jami:</span><strong id="cart-total">0 so'm</strong></div>
+      <input id="f-name" placeholder="Ismingiz" data-i18n-ph="c_name">
+      <input id="f-phone" type="tel" placeholder="Telefon raqamingiz" data-i18n-ph="c_phone">
+      <input id="f-address" placeholder="Yetkazish manzili" data-i18n-ph="c_addr">
+      <textarea id="f-note" rows="2" placeholder="Izoh (sana, vaqt, tilak matni...)" data-i18n-ph="c_note"></textarea>
+      <button class="btn btn-full" id="checkout" data-i18n="checkout">Telegram orqali buyurtma berish</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <a class="float-tg" id="float-tg" href="#" target="_blank" rel="noopener" aria-label="Telegram">✈️</a>
+    <input type="file" id="photo-input" accept="image/*" hidden>
+
+  <script src="gul-script.js"></script>
 </body>
 </html>
